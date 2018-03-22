@@ -12,26 +12,35 @@ class TestSnake < Minitest::Test
    "body"=>
     {"object"=>"list",
      "data"=>
-      [{"y"=>3, "x"=>6, "object"=>"point"},
+      [
+       {"y"=>3, "x"=>6, "object"=>"point"},
        {"y"=>2, "x"=>6, "object"=>"point"},
-       {"y"=>2, "x"=>6, "object"=>"point"}]}},
+       {"y"=>2, "x"=>6, "object"=>"point"}
+      ]
+    }
+  },
  "width"=>10,
  "turn"=>1,
  "snakes"=>
-  {"object"=>"list",
-   "data"=>
-    [{"taunt"=>nil,
-      "object"=>"snake",
-      "name"=>"Not Jake",
-      "length"=>3,
-      "id"=>"fbf01ebe-af26-4b99-beb5-b432b0ecb530",
-      "health"=>100,
+  {
+    "object"=>"list",
+    "data"=>
+      [{"taunt"=>nil,
+        "object"=>"snake",
+        "name"=>"Not Jake",
+        "length"=>3,
+        "id"=>"fbf01ebe-af26-4b99-beb5-b432b0ecb530",
+        "health"=>100,
       "body"=>
        {"object"=>"list",
         "data"=>
-         [{"y"=>3, "x"=>6, "object"=>"point"},
+         [
+          {"y"=>3, "x"=>6, "object"=>"point"},
           {"y"=>2, "x"=>6, "object"=>"point"},
-          {"y"=>2, "x"=>6, "object"=>"point"}]}},
+          {"y"=>2, "x"=>6, "object"=>"point"}
+         ]
+       }
+     },
      {"taunt"=>nil,
       "object"=>"snake",
       "name"=>"Jake",
@@ -43,7 +52,12 @@ class TestSnake < Minitest::Test
         "data"=>
          [{"y"=>1, "x"=>7, "object"=>"point"},
           {"y"=>1, "x"=>8, "object"=>"point"},
-          {"y"=>1, "x"=>8, "object"=>"point"}]}}]},
+          {"y"=>1, "x"=>8, "object"=>"point"}
+         ]
+       }
+      }
+     ]
+    },
  "object"=>"world",
  "id"=>1,
  "height"=>10,
@@ -94,4 +108,3 @@ class TestSnake < Minitest::Test
   end
 
 end
-

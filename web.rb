@@ -8,7 +8,7 @@ class BattleSnake < Sinatra::Base
 
   get '/' do
     {
-      "color"=> "#fff000",
+      "color"=> "#ffffff",
       "head_url"=> "url/to/your/img/file"
     }.to_json
   end
@@ -18,7 +18,16 @@ class BattleSnake < Sinatra::Base
     _request = json_string ? JSON.parse(json_string) : {}
 
     # Get ready to start a game with the request data
-
+    colour = "%06x" % (rand * 0xffffff)
+    taunt = ["This isn't your moms Ruby in Hollywood", "This isn't your dads Ruby in Hollywood", "Get outta town!", "Come and get me!", "Gotta get that food!", "I'm tired of these muther fucking snakes in the mother fucking code!"]
+    head = %w|bendr dead fang pixel regular safe sand-worm shades smile tongue|.sample
+    tail = %w|block-bum curled fat-rattle freckled pixel regular round-bum skinny small-rattle|.sample
+    response = {
+      "taunt" => taunt.sample,
+      "color" => "##{colour}",
+      "head_type" => head,
+      "tail_type" => tail
+    }
     # Dummy response
     taunt = ["This isn't your moms Ruby in Hollywood", "This isn't your dads Ruby in Hollywood", "Get outta town!"].sample
     response = {
@@ -33,6 +42,13 @@ class BattleSnake < Sinatra::Base
     requestJson = requestBody ? JSON.parse(requestBody) : {}
 
     snake = Snake.new(requestJson['you'])
+    foods = Food.new(requestJson['food'])
+    puts "**************Food coords*******************"
+    puts requestJson['food']
+    puts "*********************************"
+    puts "**************keys*******************"
+    puts requestJson.keys
+    puts "*********************************"
     # Calculate a move with the request data
 
     # Dummy response

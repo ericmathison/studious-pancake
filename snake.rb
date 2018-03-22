@@ -18,6 +18,9 @@ class Snake
     else
       object["body"]
     end
+    puts "+++++++++++++++++++++++++++++++++++++++++++++"
+    puts object
+    puts "+++++++++++++++++++++++++++++++++++++++++++++"
   end
 
   # TODO: this needs some work
@@ -25,6 +28,10 @@ class Snake
     Game::MOVES.select do |direction|
       can_move?(direction)
     end
+  end
+
+  def find_food
+
   end
 
   def can_move?(direction)
@@ -46,8 +53,7 @@ class Snake
   end
 
   def out_of_bounds?(coords)
-    return true unless (0..9).include?(coords['x']) && (0..9).include?(coords['y'])
+    return true unless (0..14).include?(coords['x']) && (0..14).include?(coords['y'])
     false
   end
 end
-
