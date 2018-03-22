@@ -8,6 +8,14 @@ class Game
   }
 end
 
+class FoodItems
+  def initialize(food_coordinates)
+    @first_food_item = food_coordinates.first
+    @second_food_item = food_coordinates[1]
+    @third_food_item = food_coordinates.last
+  end
+end
+
 class Snake
   attr_reader :name, :length, :health, :id, :body
   def initialize(object)

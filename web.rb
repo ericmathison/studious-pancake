@@ -42,7 +42,7 @@ class BattleSnake < Sinatra::Base
     requestJson = requestBody ? JSON.parse(requestBody) : {}
 
     snake = Snake.new(requestJson['you'])
-    foods = Food.new(requestJson['food'])
+    foods = Food.new(requestJson['food']['data'])
     puts "**************Food coords*******************"
     puts requestJson['food']
     puts "*********************************"
